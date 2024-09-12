@@ -162,7 +162,7 @@ export class SendCommand extends BoardcastCommand {
     }
 
     const cachedTxs: Map<string, btc.Transaction> = new Map();
-    if (tokenContracts.length > 4) {
+    if (tokenContracts.length > 100000) {
       console.info(`Merging your [${token.info.symbol}] tokens ...`);
       const [mergedTokens, newfeeUtxos, e] = await mergeTokens(
         this.configService,
